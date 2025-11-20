@@ -1,0 +1,7 @@
+runtime: python311
+build:
+  commands:
+    pre-build:
+      - python3 -m pip install gunicorn flask
+run:
+  command: python3 -m gunicorn -b 0.0.0.0:8080 app:app
